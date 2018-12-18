@@ -258,7 +258,7 @@ int main(int argc, char* argv[])
     vglCl3dBinDilatePack(vglThresh, vglBin, seCube, 3, 3, 3);
     vglClFlush();
     printf("First call to           Dila pac 3D cube:           %s\n", getTimeElapsedInSeconds());
-    //Total time spent on n operations Dilate pack angle
+    //Total time spent on n operations Dilate pack cube
     p = 0;
     TimerStart();
     while (p < nSteps)
