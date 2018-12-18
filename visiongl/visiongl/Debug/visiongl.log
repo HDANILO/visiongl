@@ -1,0 +1,815 @@
+﻿  cl2cpp_BIN.cpp
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(22): error C2146: syntax error: missing ';' before identifier 'cl'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(32): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(32): error C2146: syntax error: missing ';' before identifier '_err'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(32): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(34): error C2146: syntax error: missing ';' before identifier '_program'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(34): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(35): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(50): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(50): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(50): error C3861: 'clCreateProgramWithSource': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(51): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(51): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(52): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(52): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(52): error C3861: 'clBuildProgram': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(53): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(53): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(53): error C3861: 'vglClBuildDebug': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(56): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(56): error C2146: syntax error: missing ';' before identifier '_kernel'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(56): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(57): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(59): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(59): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(59): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(59): error C3861: 'clCreateKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(60): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(60): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(64): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(64): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(64): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(64): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(64): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(65): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(65): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(67): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(67): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(67): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(67): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(67): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(68): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(68): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(85): warning C4838: conversion from 'int' to 'size_t' requires a narrowing conversion
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(86): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(86): error C3861: 'clEnqueueNDRangeKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(88): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(88): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(101): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(101): error C2146: syntax error: missing ';' before identifier '_err'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(101): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(103): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(103): error C2146: syntax error: missing ';' before identifier 'mobj_convolution_window'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(103): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(104): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(104): error C2065: 'CL_MEM_READ_ONLY': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(104): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(104): error C3861: 'clCreateBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(105): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(105): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(106): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(106): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(106): error C2065: 'CL_TRUE': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(106): error C3861: 'clEnqueueWriteBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(107): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(107): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(109): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(109): error C2146: syntax error: missing ';' before identifier 'mobj_img_shape'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(109): error C2065: 'mobj_img_shape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(110): error C2065: 'mobj_img_shape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(110): error C2065: 'CL_MEM_READ_ONLY': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(110): error C2065: 'VglClShape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(110): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(110): error C3861: 'clCreateBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(111): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(111): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(112): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(112): error C2065: 'mobj_img_shape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(112): error C2065: 'CL_TRUE': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(112): error C2065: 'VglClShape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(112): error C2039: 'asVglClShape': is not a member of 'VglShape'
+  c:\users\helto\source\repos\visiongl\src\vglshape.h(30): note: see declaration of 'VglShape'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(112): error C3861: 'clEnqueueWriteBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(113): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(113): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(115): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(115): error C2146: syntax error: missing ';' before identifier '_program'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(115): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(116): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(131): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(131): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(131): error C3861: 'clCreateProgramWithSource': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(132): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(132): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(133): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(133): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(133): error C3861: 'clBuildProgram': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(134): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(134): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(134): error C3861: 'vglClBuildDebug': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(137): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(137): error C2146: syntax error: missing ';' before identifier '_kernel'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(137): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(138): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(140): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(140): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(140): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_bin.cpp(140): fatal error C1003: error count exceeds 100; stopping compilation
+  cl2cpp_MM.cpp
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(22): error C2146: syntax error: missing ';' before identifier 'cl'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(32): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(32): error C2146: syntax error: missing ';' before identifier '_err'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(32): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(34): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(34): error C2146: syntax error: missing ';' before identifier 'mobj_convolution_window'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(34): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(35): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(35): error C2065: 'CL_MEM_READ_ONLY': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(35): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(35): error C3861: 'clCreateBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(36): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(36): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(37): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(37): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(37): error C2065: 'CL_TRUE': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(37): error C3861: 'clEnqueueWriteBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(38): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(38): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(40): error C2146: syntax error: missing ';' before identifier '_program'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(40): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(41): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(56): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(56): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(56): error C3861: 'clCreateProgramWithSource': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(57): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(57): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(58): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(58): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(58): error C3861: 'clBuildProgram': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(59): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(59): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(59): error C3861: 'vglClBuildDebug': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(62): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(62): error C2146: syntax error: missing ';' before identifier '_kernel'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(62): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(63): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(65): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(65): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(65): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(65): error C3861: 'clCreateKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(66): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(66): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(70): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(70): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(70): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(70): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(70): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(71): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(71): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(73): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(73): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(73): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(73): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(73): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(74): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(74): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(76): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(76): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(76): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(76): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(76): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(77): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(77): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(79): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(79): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(79): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(80): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(80): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(82): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(82): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(82): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(83): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(83): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(85): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(85): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(85): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(86): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(86): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(103): warning C4838: conversion from 'int' to 'size_t' requires a narrowing conversion
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(104): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(104): error C3861: 'clEnqueueNDRangeKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(106): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(106): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(108): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(108): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(108): error C3861: 'clReleaseMemObject': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(109): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(109): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(122): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(122): error C2146: syntax error: missing ';' before identifier '_err'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(122): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(124): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(124): error C2146: syntax error: missing ';' before identifier 'mobj_convolution_window'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(124): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(125): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(125): error C2065: 'CL_MEM_READ_ONLY': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(125): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(125): error C3861: 'clCreateBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(126): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(126): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(127): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(127): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_mm.cpp(127): fatal error C1003: error count exceeds 100; stopping compilation
+  cl2cpp_ND.cpp
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(22): error C2146: syntax error: missing ';' before identifier 'cl'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(31): error C2039: 'clForceAsBuf': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(36): error C2039: 'clForceAsBuf': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(44): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(44): error C2146: syntax error: missing ';' before identifier '_err'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(44): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(46): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(46): error C2146: syntax error: missing ';' before identifier 'mobj_img_shape'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(46): error C2065: 'mobj_img_shape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(47): error C2065: 'mobj_img_shape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(47): error C2065: 'CL_MEM_READ_ONLY': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(47): error C2065: 'VglClShape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(47): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(47): error C3861: 'clCreateBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(48): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(48): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(49): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(49): error C2065: 'mobj_img_shape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(49): error C2065: 'CL_TRUE': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(49): error C2065: 'VglClShape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(49): error C2039: 'asVglClShape': is not a member of 'VglShape'
+  c:\users\helto\source\repos\visiongl\src\vglshape.h(30): note: see declaration of 'VglShape'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(49): error C3861: 'clEnqueueWriteBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(50): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(50): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(52): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(52): error C2146: syntax error: missing ';' before identifier 'mobj_window'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(52): error C2065: 'mobj_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(53): error C2065: 'mobj_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(53): error C2065: 'CL_MEM_READ_ONLY': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(53): error C2065: 'VglClStrEl': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(53): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(53): error C3861: 'clCreateBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(54): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(54): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(55): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(55): error C2065: 'mobj_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(55): error C2065: 'CL_TRUE': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(55): error C2065: 'VglClStrEl': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(55): error C2039: 'asVglClStrEl': is not a member of 'VglStrEl'
+  c:\users\helto\source\repos\visiongl\src\vglstrel.h(26): note: see declaration of 'VglStrEl'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(55): error C3861: 'clEnqueueWriteBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(56): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(56): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(58): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(58): error C2146: syntax error: missing ';' before identifier '_program'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(58): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(59): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(74): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(74): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(74): error C3861: 'clCreateProgramWithSource': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(75): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(75): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(76): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(76): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(76): error C3861: 'clBuildProgram': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(77): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(77): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(77): error C3861: 'vglClBuildDebug': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(80): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(80): error C2146: syntax error: missing ';' before identifier '_kernel'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(80): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(81): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(83): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(83): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(83): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(83): error C3861: 'clCreateKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(84): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(84): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(88): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(88): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(88): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(88): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(88): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(89): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(89): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(91): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(91): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(91): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(91): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(91): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(92): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(92): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(94): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(94): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(94): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(94): error C2065: 'mobj_img_shape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(94): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(95): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(95): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(97): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(97): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(97): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(97): error C2065: 'mobj_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(97): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(98): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(98): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(115): warning C4838: conversion from 'int' to 'size_t' requires a narrowing conversion
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(116): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(116): error C3861: 'clEnqueueNDRangeKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(118): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(118): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(120): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(120): error C2065: 'mobj_img_shape': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(120): error C3861: 'clReleaseMemObject': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(121): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_nd.cpp(121): fatal error C1003: error count exceeds 100; stopping compilation
+  cl2cpp_shaders.cpp
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(22): error C2146: syntax error: missing ';' before identifier 'cl'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(35): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(35): error C2146: syntax error: missing ';' before identifier '_err'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(35): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(37): error C2146: syntax error: missing ';' before identifier '_program'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(37): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(38): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(53): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(53): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(53): error C3861: 'clCreateProgramWithSource': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(54): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(54): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(55): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(55): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(55): error C3861: 'clBuildProgram': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(56): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(56): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(56): error C3861: 'vglClBuildDebug': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(59): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(59): error C2146: syntax error: missing ';' before identifier '_kernel'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(59): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(60): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(62): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(62): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(62): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(62): error C3861: 'clCreateKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(63): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(63): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(67): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(67): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(67): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(67): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(67): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(68): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(68): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(70): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(70): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(70): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(70): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(70): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(71): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(71): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(88): warning C4838: conversion from 'int' to 'size_t' requires a narrowing conversion
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(89): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(89): error C3861: 'clEnqueueNDRangeKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(91): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(91): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(104): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(104): error C2146: syntax error: missing ';' before identifier '_err'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(104): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(106): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(106): error C2146: syntax error: missing ';' before identifier 'mobj_convolution_window'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(106): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(107): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(107): error C2065: 'CL_MEM_READ_ONLY': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(107): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(107): error C3861: 'clCreateBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(108): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(108): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(109): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(109): error C2065: 'mobj_convolution_window': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(109): error C2065: 'CL_TRUE': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(109): error C3861: 'clEnqueueWriteBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(110): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(110): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(112): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(112): error C2146: syntax error: missing ';' before identifier '_program'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(112): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(113): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(128): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(128): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(128): error C3861: 'clCreateProgramWithSource': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(129): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(129): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(130): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(130): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(130): error C3861: 'clBuildProgram': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(131): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(131): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(131): error C3861: 'vglClBuildDebug': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(134): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(134): error C2146: syntax error: missing ';' before identifier '_kernel'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(134): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(135): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(137): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(137): error C2065: '_program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(137): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(137): error C3861: 'clCreateKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(138): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(138): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(142): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(142): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(142): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(142): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(142): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(143): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(143): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(145): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(145): error C2065: '_kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(145): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(145): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(145): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(146): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(146): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(148): error C2065: '_err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\cl2cpp_shaders.cpp(148): fatal error C1003: error count exceeds 100; stopping compilation
+  glsl2cpp_BG.cpp
+  glsl2cpp_shaders.cpp
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(46): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(47): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(48): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(405): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(473): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(818): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(921): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1018): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1122): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1264): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1330): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1396): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1462): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1528): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1594): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1660): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1726): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1792): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1858): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1924): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(1990): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(2057): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(2123): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(2189): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(2289): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(2355): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(2701): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(3660): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(3728): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(3796): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(3864): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(3932): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(4000): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(4066): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(4132): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(4198): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(4264): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(4864): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(4958): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(5054): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(5323): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_shaders.cpp(5391): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  glsl2cpp_Stereo.cpp
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(57): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(137): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(218): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(313): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(406): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(499): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(588): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(728): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(821): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(892): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\glsl2cpp_stereo.cpp(1031): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  iplImage.cpp
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(425): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(426): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(427): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(519): warning C4244: '=': conversion from 'float' to 'uint8_t', possible loss of data
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(524): warning C4244: '=': conversion from 'float' to 'uint16_t', possible loss of data
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(529): warning C4244: '=': conversion from 'float' to 'uint32_t', possible loss of data
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(534): warning C4244: '=': conversion from 'float' to 'uint64_t', possible loss of data
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(128): warning C4101: 'datasize': unreferenced local variable
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(560): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(605): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(615): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1195): note: see declaration of 'fscanf'
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(617): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1195): note: see declaration of 'fscanf'
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(627): error C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1195): note: see declaration of 'fscanf'
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(788): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+c:\users\helto\source\repos\visiongl\src\iplimage.cpp(855): warning C4101: 'iplImage': unreferenced local variable
+  personal_cl_functions.cpp
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(8): error C2146: syntax error: missing ';' before identifier 'cl'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(15): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(15): error C2146: syntax error: missing ';' before identifier 'err'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(15): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(17): error C2146: syntax error: missing ';' before identifier 'program'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(17): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(18): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(27): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(34): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(34): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(34): error C3861: 'clCreateProgramWithSource': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(35): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(35): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(36): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(36): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(36): error C3861: 'clBuildProgram': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(37): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(37): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(37): error C3861: 'vglClBuildDebug': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(40): error C2146: syntax error: missing ';' before identifier 'kernel'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(40): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(41): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(43): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(43): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(43): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(43): error C3861: 'clCreateKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(44): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(44): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(48): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(48): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(48): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(48): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(48): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(49): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(49): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(51): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(51): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(51): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(51): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(51): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(52): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(52): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(54): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(54): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(54): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(55): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(55): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(61): warning C4838: conversion from 'int' to 'size_t' requires a narrowing conversion
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(62): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(62): error C3861: 'clEnqueueNDRangeKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(68): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(68): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(79): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(79): error C2146: syntax error: missing ';' before identifier 'err'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(79): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(81): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(81): error C2146: syntax error: missing ';' before identifier 'program'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(81): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(82): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(91): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(98): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(98): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(98): error C3861: 'clCreateProgramWithSource': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(99): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(99): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(100): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(100): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(100): error C3861: 'clBuildProgram': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(101): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(101): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(101): error C3861: 'vglClBuildDebug': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(104): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(104): error C2146: syntax error: missing ';' before identifier 'kernel'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(104): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(105): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(107): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(107): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(107): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(107): error C3861: 'clCreateKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(108): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(108): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(112): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(112): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(112): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(112): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(112): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(113): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(113): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(115): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(115): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(115): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(115): error C2039: 'oclPtr': is not a member of 'VglImage'
+  c:\users\helto\source\repos\visiongl\src\vglimage.h(53): note: see declaration of 'VglImage'
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(115): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(116): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(116): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(118): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(118): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(118): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(119): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(119): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(125): warning C4838: conversion from 'int' to 'size_t' requires a narrowing conversion
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(126): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(126): error C3861: 'clEnqueueNDRangeKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(132): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(132): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\personal_cl_functions.cpp(132): fatal error C1003: error count exceeds 100; stopping compilation
+  vglClFunctions.cpp
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.h(6): error C2065: 'cl_mem': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.h(6): error C2146: syntax error: missing ')' before identifier 'partial_hist'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.h(7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.h(7): error C2146: syntax error: missing ';' before identifier 'vglClPartialHistogram'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.h(8): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.h(8): error C2086: 'int cl_mem': redefinition
+  c:\users\helto\source\repos\visiongl\src\vglclfunctions.h(7): note: see declaration of 'cl_mem'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.h(8): error C2146: syntax error: missing ';' before identifier 'vglCl3dPartialHistogram'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(11): warning C4068: unknown pragma
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(13): error C2146: syntax error: missing ';' before identifier 'cl'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(16): error C2146: syntax error: missing ';' before identifier 'partial_hist'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(16): error C2065: 'partial_hist': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(20): error C2065: 'partial_hist': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(20): error C3861: 'vglClPartialHistogram': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(25): error C2065: 'partial_hist': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(25): error C3861: 'vglCl3dPartialHistogram': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(28): error C2065: 'partial_hist': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(28): error C3861: 'vglClSumPartialHistogram': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(30): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(30): error C2146: syntax error: missing ';' before identifier 'err'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(30): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(30): error C2065: 'partial_hist': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(30): error C3861: 'clReleaseMemObject': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(31): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(31): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(36): error C2146: syntax error: missing ')' before identifier 'partial_hist'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(37): error C2143: syntax error: missing ';' before '{'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(37): error C2447: '{': missing function header (old-style formal list?)
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(109): error C2086: 'int cl_mem': redefinition
+  c:\users\helto\source\repos\visiongl\src\vglclfunctions.h(7): note: see declaration of 'cl_mem'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(109): error C2146: syntax error: missing ';' before identifier 'vglClPartialHistogram'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(110): error C2143: syntax error: missing ';' before '{'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(110): error C2447: '{': missing function header (old-style formal list?)
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(171): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(171): error C2086: 'int cl_mem': redefinition
+  c:\users\helto\source\repos\visiongl\src\vglclfunctions.h(7): note: see declaration of 'cl_mem'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(171): error C2146: syntax error: missing ';' before identifier 'vglCl3dPartialHistogram'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(172): error C2143: syntax error: missing ';' before '{'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(172): error C2447: '{': missing function header (old-style formal list?)
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(235): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(235): error C2146: syntax error: missing ';' before identifier 'err'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(235): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(236): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(237): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(238): error C2146: syntax error: missing ';' before identifier 'mobj_arr'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(238): error C2065: 'mobj_arr': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(239): error C2065: 'mobj_arr': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(239): error C2065: 'CL_MEM_READ_WRITE': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(239): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(239): error C3861: 'clCreateBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(240): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(240): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(241): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(241): error C2065: 'mobj_arr': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(241): error C2065: 'CL_TRUE': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(241): error C3861: 'clEnqueueWriteBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(242): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(242): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(244): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(244): error C2146: syntax error: missing ';' before identifier 'program'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(244): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(245): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(260): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(260): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(260): error C3861: 'clCreateProgramWithSource': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(261): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(261): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(262): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(262): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(262): error C3861: 'clBuildProgram': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(263): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(263): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(263): error C3861: 'vglClBuildDebug': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(266): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(266): error C2146: syntax error: missing ';' before identifier 'kernel'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(266): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(267): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(269): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(269): error C2065: 'program': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(269): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(269): error C3861: 'clCreateKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(270): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(270): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(273): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(273): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(273): error C2065: 'mobj_arr': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(273): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(274): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(274): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(276): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(276): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(276): error C3861: 'clSetKernelArg': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(277): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(277): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(279): warning C4838: conversion from 'int' to 'size_t' requires a narrowing conversion
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(280): error C2065: 'kernel': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(280): error C3861: 'clEnqueueNDRangeKernel': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(281): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(281): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(284): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(284): error C2065: 'mobj_arr': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(284): error C2065: 'CL_TRUE': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(284): error C3861: 'clEnqueueReadBuffer': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(285): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(285): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(287): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(287): error C2065: 'mobj_arr': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(287): error C3861: 'clReleaseMemObject': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(288): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(288): error C3861: 'vglClCheckError': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(295): error C2065: 'cl_int': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(295): error C2146: syntax error: missing ';' before identifier 'err'
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(295): error C2065: 'err': undeclared identifier
+c:\users\helto\source\repos\visiongl\src\vglclfunctions.cpp(295): fatal error C1003: error count exceeds 100; stopping compilation
+  vglClImage.cpp
+  vglContext.cpp
+  vglDcmtkIo.cpp
+  vglDeconv.cpp
+c:\users\helto\source\repos\visiongl\src\vgldeconv.cpp(149): warning C4101: 'value': unreferenced local variable
+c:\users\helto\source\repos\visiongl\src\vgldeconv.cpp(148): warning C4101: 'mInverse': unreferenced local variable
+c:\users\helto\source\repos\visiongl\src\vgldeconv.cpp(150): warning C4101: 'detmNormal': unreferenced local variable
+c:\users\helto\source\repos\visiongl\src\vgldeconv.cpp(425): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+  vglGdcmIo.cpp
+  vglImage.cpp
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(81): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(82): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(83): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(84): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(717): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(738): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(1362): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(1410): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(1443): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(1501): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1772): note: see declaration of 'sprintf'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(1789): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(1791): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(1792): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(2098): warning C4101: 'in_dst': unreferenced local variable
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(2098): warning C4101: 'in_buf': unreferenced local variable
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(2121): warning C4101: 'in_dst': unreferenced local variable
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(2121): warning C4101: 'in_buf': unreferenced local variable
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(2164): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(2242): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(2699): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(2704): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(2709): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\helto\source\repos\visiongl\src\vglimage.cpp(2714): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  vglLoadShader.cpp
+c:\users\helto\source\repos\visiongl\src\vglloadshader.cpp(34): warning C4101: 'infoLog': unreferenced local variable
+c:\users\helto\source\repos\visiongl\src\vglloadshader.cpp(107): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+c:\users\helto\source\repos\visiongl\src\vglloadshader.cpp(104): warning C4101: 'f': unreferenced local variable
+  vglOpencv.cpp
+  vglShape.cpp
+c:\users\helto\source\repos\visiongl\src\vglshape.cpp(31): error C3861: 'exit': identifier not found
+c:\users\helto\source\repos\visiongl\src\vglshape.cpp(363): error C3861: 'exit': identifier not found
+  vglSimpleBGModel.cpp
+c:\users\helto\source\repos\visiongl\src\vglsimplebgmodel.cpp(104): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  vglStrEl.cpp
+c:\users\helto\source\repos\visiongl\src\vglstrel.cpp(116): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  vglTiffIo.cpp
+  Generating Code...

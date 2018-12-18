@@ -1,3 +1,7 @@
+.vs/
+visiongl/freeglut/
+visiongl/glew-2.1.0/
+visiongl/opencv/
 images/output/
 src/AMDOpenCLDebug.log
 src/AMDOpenCLDebugAPIUsage.log
