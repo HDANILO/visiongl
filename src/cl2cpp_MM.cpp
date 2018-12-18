@@ -6,6 +6,7 @@
 ***  Please do not edit                                             ***
 ***                                                                 ***
 *********************************************************************/
+#ifdef __OPENCL__
 
 #include "vglImage.h"
 #include "vglClImage.h"
@@ -2877,3 +2878,4 @@ void vglClFuzzyStdErode(VglImage* img_input, VglImage* img_output, float* convol
   vglSetContext(img_output, VGL_CL_CONTEXT);
 }
 
+#endif

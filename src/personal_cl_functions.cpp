@@ -1,3 +1,5 @@
+#ifdef __OPENCL__
+
 #include "vglImage.h"
 #include "vglClImage.h"
 #include "vglContext.h"
@@ -193,3 +195,4 @@ float vglCl9root(float number)
 
 	return ret;
 }
+#endif

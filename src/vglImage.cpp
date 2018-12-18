@@ -1319,7 +1319,7 @@ VglImage* vglLoadImage(char* filename, int iscolor /*= -1*/, int has_mipmap /*= 
 
   if (!ipl){
     fprintf(stderr, "vglCreateImage: Error loading image from file %s\n", filename);
-    free(img);
+    //free(img);
     return NULL;
   }
 

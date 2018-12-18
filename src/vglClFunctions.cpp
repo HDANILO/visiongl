@@ -1,3 +1,5 @@
+#ifdef __OPENCL__
+
 #include "vglImage.h"
 #include "vglClImage.h"
 #include "vglContext.h"
@@ -1357,3 +1359,4 @@ void vglCl3dFuzzyDilate(VglImage* src, VglImage* dst, float* strel, int strel_si
     printf("%s: %s : Warning: Not a valid type of operation. type = %d\n", __FILE__, __FUNCTION__, type);
   }
 }
+#endif

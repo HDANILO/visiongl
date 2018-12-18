@@ -3,6 +3,7 @@ visiongl/freeglut/
 visiongl/glew-2.1.0/
 visiongl/opencv/
 visiongl/visiongl/Debug/
+visiongl/Debug/
 images/output/
 src/AMDOpenCLDebug.log
 src/AMDOpenCLDebugAPIUsage.log

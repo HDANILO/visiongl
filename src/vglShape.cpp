@@ -5,7 +5,7 @@
 #ifdef __OPENCL__
 #include <vglClShape.h>
 #endif
-
+#include <cstdlib>
 //printf
 #include <stdio.h>
 

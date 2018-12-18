@@ -7,6 +7,8 @@
 ***                                                                 ***
 *********************************************************************/
 
+#ifdef __OPENCL__
+
 #include "vglImage.h"
 #include "vglClImage.h"
 #include "vglContext.h"
@@ -591,3 +593,4 @@ void vglClNdThreshold(VglImage* img_input, VglImage* img_output, unsigned char t
   vglSetContext(img_output, VGL_CL_CONTEXT);
 }
 
+#endif

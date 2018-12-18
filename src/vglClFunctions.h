@@ -1,5 +1,7 @@
 #include "vglImage.h"
 
+#ifdef __OPENCL__
+
 int* vglClHistogram(VglImage* img_input);
 
 //do not use, private
@@ -79,3 +81,4 @@ void vglClFuzzyDilate(VglImage* src, VglImage* dst, float* strel, int strel_size
 
 void vglCl3dFuzzyErode(VglImage* src, VglImage* dst, float* strel, int strel_size_x, int strel_size_y, int strel_size_z, int type = 1, float gamma = 0.2);
 void vglCl3dFuzzyDilate(VglImage* src, VglImage* dst, float* strel, int strel_size_x, int strel_size_y, int strel_size_z, int type = 1, float gamma = 0.2);
+#endif
