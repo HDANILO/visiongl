@@ -1511,7 +1511,6 @@ VglImage* vglLoadNdImage(char* filename, int lStart, int lEnd, int* shape, int n
       vglReleaseImage(&img);
       return 0;
     }
-
     memcpy(((char*)ptr) + offset, (void*) ipl->imageData, delta);
     offset += delta;
     cvReleaseImage(&ipl);

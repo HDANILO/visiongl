@@ -502,7 +502,7 @@ PrintPlatform(cl_platform_id platform) {
       printf("platform[%p]: %s: %s\n", platform, props[ii].name, buf);
    }
 
-   if ((status = clGetDeviceIDs(platform, CL_DEVICE_TYPE_ALL,
+   if ((status = clGetDeviceIDs(platform, CL_DEVICE_TYPE_GPU,
                                 0, NULL, &numDevices)) != CL_SUCCESS) {
       Warning("platform[%p]: Unable to query the number of devices: %s\n",
               platform, CLErrString(status));
@@ -511,7 +511,7 @@ PrintPlatform(cl_platform_id platform) {
    printf("platform[%p]: Found %d device(s).\n", platform, numDevices);
 
    deviceList = (cl_device_id*) malloc(numDevices * sizeof(cl_device_id));
-   if ((status = clGetDeviceIDs(platform, CL_DEVICE_TYPE_ALL,
+   if ((status = clGetDeviceIDs(platform, CL_DEVICE_TYPE_GPU,
                                 numDevices, deviceList, NULL)) != CL_SUCCESS) {
       Warning("platform[%p]: Unable to enumerate the devices: %s\n",
               platform, CLErrString(status));

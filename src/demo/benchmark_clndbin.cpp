@@ -20,7 +20,7 @@ void saveResult(VglImage* out, char* outString, char* outPath, char* outFolder, 
   char *cmd         = (char*) malloc(strlen(outPath) + 255);
   char* outFilename = (char*) malloc(strlen(outPath) + 255);
 
-  sprintf(cmd, "mkdir -p %s/%s", outPath, outFolder);
+  sprintf(cmd, "md %s\\%s", outPath, outFolder);
   system(cmd);
   sprintf(outFilename, outString, outPath, outFolder);
   vglSaveNdImage((char*) outFilename, out, i_0);
@@ -57,13 +57,13 @@ obtained from the image file.\
     exit(1);
   }
 
-  char *inFilename = argv[1]; // name of the input file
+  char *inFilename = (char*)"C:\\Users\\Helto\\source\\repos\\visiongl\\images\\mitosis\\mitosis-5d%04d.tif"; // name of the input file
   int i_0 = atoi(argv[2]);
   int i_n = atoi(argv[3]);
   int nSteps = atoi(argv[4]);
   char *outPath = argv[5]; // name of the output folder
   char* outFolder;
-  char* outString   = (char*) "%s/%s/out_%%05d.pbm";
+  char* outString   = (char*) "%s\\%s\\out_%%05d.tiff";
   printf("outString = %s\n", outString);
 
   //vglInit(10,10);

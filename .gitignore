@@ -11,3 +11,4 @@ src/OpenCL.dll
 src/OpenCL.pdb
 bin/
 *~
+/images/mitosis

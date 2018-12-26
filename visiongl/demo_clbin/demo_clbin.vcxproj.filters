@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\src\demo\timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\demo\clinfo.cpp">
+    <ClCompile Include="..\..\src\demo\benchmark_clndbin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

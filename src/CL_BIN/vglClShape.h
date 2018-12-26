@@ -1,1 +1,1 @@
-../vglClShape.h
+C:/Users/Helto/source/repos/visiongl/src/vglClShape.h

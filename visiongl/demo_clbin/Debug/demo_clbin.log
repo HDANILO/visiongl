@@ -1,4 +1,4 @@
-﻿  clinfo.cpp
-c:\users\helto\source\repos\visiongl\src\demo\clinfo.cpp(522): warning C4018: '<': signed/unsigned mismatch
-c:\users\helto\source\repos\visiongl\src\demo\clinfo.cpp(556): warning C4018: '<': signed/unsigned mismatch
+﻿  benchmark_clndbin.cpp
+c:\users\helto\source\repos\visiongl\src\demo\benchmark_clndbin.cpp(172): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+c:\users\helto\source\repos\visiongl\src\demo\benchmark_clndbin.cpp(172): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   demo_clbin.vcxproj -> C:\Users\Helto\source\repos\visiongl\visiongl\Debug\demo_clbin.exe

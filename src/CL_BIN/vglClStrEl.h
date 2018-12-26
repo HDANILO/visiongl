@@ -1,1 +1,1 @@
-../vglClStrEl.h
+C:/Users/Helto/source/repos/visiongl/src/vglClStrEl.h

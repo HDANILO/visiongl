@@ -299,9 +299,9 @@ void vglClInit()
 {
     cl_int err;
     cl_uint num_platforms, num_devices;
-    cl_device_type device_type = CL_DEVICE_TYPE_GPU;
-    cl_uint id = 0;
-    cl_uint plat = 1;
+    cl_device_type device_type = CL_DEVICE_TYPE_ALL;
+    cl_uint id = 1;
+    cl_uint plat = 0;
     err = clGetPlatformIDs(0, NULL, &num_platforms);
     vglClCheckError(err, (char*) "clGetPlatformIDs get number of platforms");
     cl.platformId = (cl_platform_id*)malloc(sizeof(cl_platform_id)*num_platforms);
