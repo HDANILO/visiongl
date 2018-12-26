@@ -86,15 +86,11 @@ int main(int argc, char* argv[])
     {
         p++;
         vglClBinThreshold(vglIn, vglThresh, 0.282);
-        printf("CHK\n");
     }
-    printf("CHK1\n");
     vglClFlush();
-    printf("CHK2\n");
     printf("Time spent on %8d         Threshold:           %s\n", nSteps, getTimeElapsedInSeconds());
 
     vglCheckContext(vglThresh, VGL_RAM_CONTEXT);
-    printf("CHK3\n");
     sprintf(outFilename, "%s%s", outPath, "/out_clbin_thresh.pbm");
     iplSavePgm(outFilename, vglThresh->ipl);
 
@@ -110,7 +106,6 @@ int main(int argc, char* argv[])
     {
         p++;
         vglClBinSwap(vglThresh, vglSwap);
-        printf("CHK\n");
     }
     vglClFlush();
     printf("Time spent on %8d              Swap:           %s\n", nSteps, getTimeElapsedInSeconds());

@@ -1,1 +1,1 @@
-../vglConst.h
+C:/Users/Helto/source/repos/visiongl/src/vglConst.h

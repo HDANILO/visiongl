@@ -20,17 +20,16 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{3B30B76D-F4E4-49D0-9B1A-7AC5B6CA5270}</ProjectGuid>
-    <RootNamespace>visiongl</RootNamespace>
+    <ProjectGuid>{25042A8D-C775-4EDB-8453-1495137CC53C}</ProjectGuid>
+    <RootNamespace>democlbin</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -75,14 +74,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Program Files (x86)\GnuWin32\include;C:\Users\Helto\source\repos\visiongl\visiongl\glew-2.1.0\include;C:\Users\Helto\source\repos\visiongl\visiongl\freeglut\include;C:\Users\Helto\source\repos\visiongl\src;C:\Program Files %28x86%29\NVIDIA GPU Computing Toolkit\CUDA\v3.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>__TIFF__;_CRT_SECURE_NO_WARNINGS;__OPENCL__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Helto\source\repos\visiongl\visiongl\glew-2.1.0\include;C:\Users\Helto\source\repos\visiongl\visiongl\freeglut\include;C:\Users\Helto\source\repos\visiongl\src;C:\Program Files %28x86%29\NVIDIA GPU Computing Toolkit\CUDA\v3.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\Helto\source\repos\visiongl\visiongl\glew-2.1.0\lib\Release\Win32;C:\Users\Helto\source\repos\visiongl\visiongl\freeglut\lib\;C:\Program Files %28x86%29\NVIDIA GPU Computing Toolkit\CUDA\v3.2\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;freeglut.lib;opencl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libtiff.lib;glew32.lib;freeglut.lib;opencl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\GnuWin32\lib;C:\Users\Helto\source\repos\visiongl\visiongl\demo_clbin;C:\Users\Helto\source\repos\visiongl\visiongl\glew-2.1.0\lib\Release\Win32;C:\Users\Helto\source\repos\visiongl\visiongl\freeglut\lib\;C:\Program Files %28x86%29\NVIDIA GPU Computing Toolkit\CUDA\v3.2\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -122,63 +122,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\cl2cpp_BIN.h" />
-    <ClInclude Include="..\..\src\cl2cpp_MM.h" />
-    <ClInclude Include="..\..\src\cl2cpp_ND.h" />
-    <ClInclude Include="..\..\src\cl2cpp_shaders.h" />
-    <ClInclude Include="..\..\src\glsl2cpp_BG.h" />
-    <ClInclude Include="..\..\src\glsl2cpp_shaders.h" />
-    <ClInclude Include="..\..\src\glsl2cpp_Stereo.h" />
-    <ClInclude Include="..\..\src\iplImage.h" />
-    <ClInclude Include="..\..\src\kernel2cu_shaders.h" />
-    <ClInclude Include="..\..\src\personal_cl_functions.h" />
-    <ClInclude Include="..\..\src\vglClFunctions.h" />
-    <ClInclude Include="..\..\src\vglClImage.h" />
-    <ClInclude Include="..\..\src\vglClShape.h" />
-    <ClInclude Include="..\..\src\vglClStrEl.h" />
-    <ClInclude Include="..\..\src\vglConst.h" />
-    <ClInclude Include="..\..\src\vglContext.h" />
-    <ClInclude Include="..\..\src\vglCudaImage.h" />
-    <ClInclude Include="..\..\src\vglDcmtkIo.h" />
-    <ClInclude Include="..\..\src\vglDeconv.h" />
-    <ClInclude Include="..\..\src\vglGdcmIo.h" />
-    <ClInclude Include="..\..\src\vglHead.h" />
-    <ClInclude Include="..\..\src\vglImage.h" />
-    <ClInclude Include="..\..\src\vglLoadShader.h" />
-    <ClInclude Include="..\..\src\vglOpencv.h" />
-    <ClInclude Include="..\..\src\vglShape.h" />
-    <ClInclude Include="..\..\src\vglSimpleBGModel.h" />
-    <ClInclude Include="..\..\src\vglStrEl.h" />
-    <ClInclude Include="..\..\src\vglTail.h" />
-    <ClInclude Include="..\..\src\vglTiffIo.h" />
+    <ClCompile Include="..\..\src\demo\clinfo.cpp" />
+    <ClCompile Include="..\..\src\demo\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\cl2cpp_BIN.cpp" />
-    <ClCompile Include="..\..\src\cl2cpp_MM.cpp" />
-    <ClCompile Include="..\..\src\cl2cpp_ND.cpp" />
-    <ClCompile Include="..\..\src\cl2cpp_shaders.cpp" />
-    <ClCompile Include="..\..\src\glsl2cpp_BG.cpp" />
-    <ClCompile Include="..\..\src\glsl2cpp_shaders.cpp" />
-    <ClCompile Include="..\..\src\glsl2cpp_Stereo.cpp" />
-    <ClCompile Include="..\..\src\iplImage.cpp" />
-    <ClCompile Include="..\..\src\personal_cl_functions.cpp" />
-    <ClCompile Include="..\..\src\vglClFunctions.cpp" />
-    <ClCompile Include="..\..\src\vglClImage.cpp" />
-    <ClCompile Include="..\..\src\vglContext.cpp" />
-    <ClCompile Include="..\..\src\vglDcmtkIo.cpp" />
-    <ClCompile Include="..\..\src\vglDeconv.cpp" />
-    <ClCompile Include="..\..\src\vglGdcmIo.cpp" />
-    <ClCompile Include="..\..\src\vglImage.cpp" />
-    <ClCompile Include="..\..\src\vglLoadShader.cpp" />
-    <ClCompile Include="..\..\src\vglOpencv.cpp" />
-    <ClCompile Include="..\..\src\vglShape.cpp" />
-    <ClCompile Include="..\..\src\vglSimpleBGModel.cpp" />
-    <ClCompile Include="..\..\src\vglStrEl.cpp" />
-    <ClCompile Include="..\..\src\vglTiffIo.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\src\kernel2cu_shaders.cu" />
-    <None Include="..\..\src\vglCudaImage.cu" />
+    <ProjectReference Include="..\visiongl\visiongl.vcxproj">
+      <Project>{3b30b76d-f4e4-49d0-9b1a-7ac5b6ca5270}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

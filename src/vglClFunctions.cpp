@@ -15,7 +15,7 @@
 extern VglClContext cl;
 
 int* vglClHistogram(VglImage* img_input){
-  cl_mem partial_hist;
+  cl_mem partial_hist = NULL;
 
   if (img_input->ndim == 2)
   {

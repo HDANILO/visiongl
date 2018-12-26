@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerAttach>true</LocalDebuggerAttach>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>C:\tmp\saida2.tif 1000 C:\tmp\output\ &gt; C:\tmp\clinfo.txt</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\Users\Helto\source\repos\visiongl\src</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+</Project>

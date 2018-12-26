@@ -273,8 +273,9 @@ tdata_t tif_ReadRGBData(TIFF* tif)
 {
   int* buffer = (int*)tif_Malloc(tif);
   char* raster = (char*)tif_Malloc(tif);
-  printf("sizeof(raster) = %ld\n", malloc_usable_size(raster));
-  printf("sizeof(buffer) = %ld\n", malloc_usable_size(buffer));
+  //printf("sizeof(raster) = %ld\n", malloc_usable_size(raster)); does not exists on windows
+  //printf("sizeof(buffer) = %ld\n", malloc_usable_size(buffer)); does not exists on windows
+  
 
   int rgba;
 
@@ -698,6 +699,8 @@ int vglSaveTiff(char* outFilename, VglImage* image)
   }
  
   TIFFClose(out);
+
+  return 0;
 }
 
 /** Function for saving 2D TIFF images

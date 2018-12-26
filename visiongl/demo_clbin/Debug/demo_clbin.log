@@ -1,0 +1,4 @@
+﻿  clinfo.cpp
+c:\users\helto\source\repos\visiongl\src\demo\clinfo.cpp(522): warning C4018: '<': signed/unsigned mismatch
+c:\users\helto\source\repos\visiongl\src\demo\clinfo.cpp(556): warning C4018: '<': signed/unsigned mismatch
+  demo_clbin.vcxproj -> C:\Users\Helto\source\repos\visiongl\visiongl\Debug\demo_clbin.exe

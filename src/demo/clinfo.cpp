@@ -15,7 +15,7 @@
 
 #include <stdio.h>
 #include <malloc.h>
-#include <getopt.h>
+//#include <getopt.h>
 #include <stdlib.h>
 
 #include "CL/cl.h"
@@ -60,7 +60,7 @@ Usage(const char *progName) {
  * Results:
  *      void, opts is initialized.
  */
-
+/*
 static void
 ParseOpts(Opts *opts, int argc, char *argv[]) {
    int opt;
@@ -82,7 +82,7 @@ ParseOpts(Opts *opts, int argc, char *argv[]) {
 
    return;
 }
-
+*/
 
 /*
  * CLErrString --
@@ -536,7 +536,7 @@ main(int argc, char * argv[])
     cl_uint numPlatforms;
     int ii;
 
-    ParseOpts(&opts, argc, argv);
+    //ParseOpts(&opts, argc, argv);
 
 
     if ((status = clGetPlatformIDs(0, NULL, &numPlatforms)) != CL_SUCCESS) {
