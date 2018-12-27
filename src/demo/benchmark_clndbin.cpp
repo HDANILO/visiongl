@@ -29,6 +29,7 @@ void saveResult(VglImage* out, char* outString, char* outPath, char* outFolder, 
 
 int main(int argc, char *argv[])
 {
+	printf("Image Pack Size in byte : %d\n", VGL_PACK_SIZE_BYTES);
   char* usage = (char*) "\n\
     This program reads a stack of image files and saves \n\
 the results after benchmarking some operations. Usage is as follows:\n\
@@ -63,7 +64,7 @@ obtained from the image file.\
   int nSteps = atoi(argv[4]);
   char *outPath = argv[5]; // name of the output folder
   char* outFolder;
-  char* outString   = (char*) "%s\\%s\\out_%%05d.tiff";
+  char* outString   = (char*) "%s\\%s\\out_%%05d.pbm";
   printf("outString = %s\n", outString);
 
   //vglInit(10,10);

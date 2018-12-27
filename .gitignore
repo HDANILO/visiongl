@@ -4,6 +4,8 @@ visiongl/glew-2.1.0/
 visiongl/opencv/
 visiongl/visiongl/Debug/
 visiongl/Debug/
+visiongl/demo_clbin/Debug/
+visiongl/Project1/
 images/output/
 src/AMDOpenCLDebug.log
 src/AMDOpenCLDebugAPIUsage.log

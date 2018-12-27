@@ -13,7 +13,7 @@ __kernel void vglCl3dBinNot(__read_only image3d_t img_input,
                           CLK_FILTER_NEAREST;           //Don't interpolate
 
 
-    uint4 p = read_imageui(img_input, smp, (int4)(coords.x, coords.y, coords.z, 0));
+    uint4 p = read_imageui(img_input, smp, coords);
     /*
     uint4 result = 0;
     for (int bit = 0; bit < 8; bit++)
@@ -28,5 +28,5 @@ __kernel void vglCl3dBinNot(__read_only image3d_t img_input,
     }
     */
     //write_imageui(img_output, coords, 0x7f ^ p);
-    write_imageui(img_output, coords, VGL_PACK_MAX_UINT & ~p);
+    write_imageui(img_output, coords, (uint4)VGL_PACK_MAX_UINT & ~p);
 }

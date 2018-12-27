@@ -36,6 +36,8 @@ int main(int argc, char* argv[])
     //vglInit(50,50);
     vglClInit();
 
+	printf("Image Pack Size in bytes: %d\n", VGL_PACK_SIZE_BYTES);
+
     int nSteps = atoi(argv[4]);
     char* inFilename = argv[1];
     int   imgIFirst = atoi(argv[2]);

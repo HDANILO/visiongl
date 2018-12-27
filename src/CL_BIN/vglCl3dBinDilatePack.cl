@@ -49,7 +49,7 @@ __kernel void vglCl3dBinDilatePack(__read_only image3d_t img_input,
             {
               p = read_imageui(img_input, smp, (int4)(j_img, i_img, k_img, 0));
               if (j_img == ws_img)
-                p = p & pad;  // In erosion, replace & with |
+                p = p & (uint)pad;  // In erosion, replace & with |
               result = result | (p.x >> ( -j_w));
               if (j_img == ws_img)
                 p = boundary;

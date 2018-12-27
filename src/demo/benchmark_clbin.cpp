@@ -25,7 +25,7 @@
 
 int main(int argc, char* argv[])
 {
-
+	printf("Image Pack Size in bytes: %d\n", VGL_PACK_SIZE_BYTES);
     if (argc != 4)
     {
         printf("\nUsage: demo_benchmark_clbin lena_1024.tiff 1000 /tmp\n\n");
