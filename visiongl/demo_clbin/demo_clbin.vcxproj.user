@@ -3,7 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LocalDebuggerAttach>false</LocalDebuggerAttach>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommandArguments>"C:\tmp\saida2.tif" 1 C:\tmp\output</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>"C:\Users\Helto\source\repos\visiongl\images\mitosis\mitosis-5d%%04d.tif" 0 335 1 C:\tmp\output</LocalDebuggerCommandArguments>
     <LocalDebuggerWorkingDirectory>C:\Users\Helto\source\repos\visiongl\src</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>

@@ -58,7 +58,7 @@ obtained from the image file.\
     exit(1);
   }
 
-  char *inFilename = (char*)"C:\\Users\\Helto\\source\\repos\\visiongl\\images\\mitosis\\mitosis-5d%04d.tif"; // name of the input file
+  char *inFilename = argv[1]; // name of the input file
   int i_0 = atoi(argv[2]);
   int i_n = atoi(argv[3]);
   int nSteps = atoi(argv[4]);

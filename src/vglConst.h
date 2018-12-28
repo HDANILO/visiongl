@@ -44,7 +44,7 @@
   #define VGL_ARR_CLSTREL_SIZE 256
 //#endif
 
-#define VGL_PACK_64
+#define VGL_PACK_32
 
 #ifdef VGL_PACK_8
   #define VGL_PACK_SIZE_BITS 8

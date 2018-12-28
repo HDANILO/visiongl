@@ -14,5 +14,5 @@ __kernel void vglClBinNot(__read_only image2d_t img_input,
 
 
     uint4 p = read_imageui(img_input, smp, (int2)(coords.x, coords.y));
-    write_imageui(img_output, coords, VGL_PACK_MAX_UINT & ~p);
+    write_imageui(img_output, coords, (uint)VGL_PACK_MAX_UINT & ~p);
 }

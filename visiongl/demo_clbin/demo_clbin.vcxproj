@@ -122,7 +122,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\bin\win32\demo\benchmark_clbin.cpp" />
+    <ClCompile Include="..\..\src\demo\benchmark_cl3dbin.cpp" />
     <ClCompile Include="..\..\src\demo\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
