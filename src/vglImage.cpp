@@ -639,11 +639,7 @@ void vglSaveImage(char* filename, VglImage* image)
 
   if (image->ndim <= 2 && image->ipl != NULL)
   {
-#ifdef __OPENCV__
-    cvSaveImage(filename, image->ipl);
-#else
-    iplSaveImage(filename, image->ipl);
-#endif
+
   }
   else if (image->ndim == 3)
   {
@@ -652,6 +648,22 @@ void vglSaveImage(char* filename, VglImage* image)
   else
   {
     fprintf(stderr, "%s:%s: Error: unable to save image with more than 3 dimensions\n", __FILE__, __FUNCTION__);
+  }
+}
+
+void vglSaveIplImage(char* filename, IplImage* ipl, int* params /*= 0*/)
+{
+  if (ipl->depth == IPL_DEPTH_1U)
+  {
+    iplSaveImage(filename, ipl);
+  }
+  else
+  {
+#ifdef __OPENCV__
+    cvSaveImage(filename, ipl);
+#else
+    iplSaveImage(filename, ipl);
+#endif
   }
 }
 
@@ -725,22 +737,14 @@ void vglSaveNdImage(char* filename, VglImage* image, int lStart, int lEndParam /
 
   ipl->imageData = temp_image;
 
-#ifdef __OPENCV__
-  cvSaveImage(temp_filename, ipl);
-#else
-  iplSaveImage(temp_filename, ipl);
-#endif
+  vglSaveIplImage(temp_filename, ipl);
   int c = image->getHeight()*image->getRowSizeInBytes();
   for(int i = lStart+1; i <= lEnd; i++)
   {
     memcpy(temp_image,((char*)ptr)+c,image->getHeight()*image->getRowSizeInBytes());
     ipl->imageData = temp_image;
     sprintf(temp_filename, filename, i);
-#ifdef __OPENCV__
-    cvSaveImage(temp_filename, ipl);
-#else
-    iplSaveImage(temp_filename, ipl);
-#endif
+    vglSaveIplImage(temp_filename, ipl);
     c += image->getHeight()*image->getRowSizeInBytes();
   }
   cvReleaseImage(&ipl);
@@ -1015,6 +1019,7 @@ void vglReleaseImage(VglImage** p_image)
   }
 #endif
   delete(*p_image);
+  p_image = NULL;
 }
 
 /** Replace IplImage, stored inside a VglImage, with new IplImage.
@@ -1537,8 +1542,21 @@ int vglReshape(VglImage* img, VglShape* newShape)
   }
   if ( (img->ipl != NULL) && (newShape->ndim > 2) )
   {
+    int ws = newShape->findWidthStep(newShape->getBps(), newShape->getWidth(), newShape->getNChannels());
+    if (img->ipl->widthStep != ws)
+    {
+      fprintf(stderr, "%s: %s: Error: ipl widthStep = %d != %d = new widthStep.\n", __FILE__, __FUNCTION__, ws, img->ipl->widthStep);
+      //exit(1);
+    }
+    img->vglShape = new VglShape(newShape);
+    int size = img->getTotalSizeInBytes();
+    img->ndarray = malloc(size);    
+    memcpy(img->ndarray, (void*)img->ipl->imageData, size);
+    cvReleaseImage(&img->ipl);
+    /*
     fprintf(stderr, "%s: %s: Error: unable to reshape ipl image to shape with more than 2 dimensions\n", __FILE__, __FUNCTION__);
     exit(1);
+    */
   }
   img->vglShape = new VglShape(newShape);
   delete(origShape);

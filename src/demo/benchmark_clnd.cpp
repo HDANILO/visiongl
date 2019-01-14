@@ -6,6 +6,7 @@
 #include "cl2cpp_ND.h"
 #include "glsl2cpp_shaders.h"
 
+#include "vglConst.h"
 #include "vglShape.h"
 #include "vglStrEl.h"
 
@@ -19,8 +20,14 @@ int saveResult(VglImage* out, char* outString, char* outPath, char* outFolder, i
   char *cmd         = (char*) malloc(strlen(outPath) + 255);
   char* outFilename = (char*) malloc(strlen(outPath) + 255);
 
-  sprintf(cmd, "mkdir -p %s/%s", outPath, outFolder);
-  system(cmd);
+  sprintf(cmd, "%s %s%s%s", MKDIR, outPath, DIRSEP, outFolder);
+  int retval = system(cmd);
+  if (retval)
+  {
+    fprintf(stderr, "%s: %s: Error = %d creating folder %s%s%s\n", __FILE__, __FUNCTION__, retval, outPath, DIRSEP, outFolder);
+    exit(1);
+  }
+  
   sprintf(outFilename, outString, outPath, outFolder);
   vglSaveNdImage((char*) outFilename, out, i_0);
 }  
@@ -149,7 +156,8 @@ obtained from the image file.\
 
   int p;
 
-if (img->clForceAsBuf){
+if (true){
+//if (img->clForceAsBuf){
   // Benchmarks:
 
 
@@ -257,7 +265,7 @@ if (img->clForceAsBuf){
   {
     vglReshape(out, origVglShape);
   }
-  outFolder = (char*) "clnd_conv_sep";
+  outFolder = (char*) "clnd_dilate_sep";
   saveResult(out, outString, outPath, outFolder, i_0);
 
 
@@ -358,6 +366,7 @@ if (img->clForceAsBuf){
 }
 else
 {
+  /*
   // Benchmarks:
 
 
@@ -469,7 +478,7 @@ else
   {
     vglReshape(out, origVglShape);
   }
-  outFolder = (char*) "clnd_conv_sep";
+  outFolder = (char*) "clnd_dilate_sep";
   saveResult(out, outString, outPath, outFolder, i_0);
 
 
@@ -567,6 +576,7 @@ else
   }
   outFolder = (char*) "clnd_copy";
   saveResult(out, outString, outPath, outFolder, i_0);
+  */
 }
   //First call to n-dimensional Copy CPU->GPU
   vglCheckContext(img, VGL_RAM_CONTEXT);

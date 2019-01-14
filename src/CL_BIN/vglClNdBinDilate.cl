@@ -21,7 +21,7 @@ __kernel void vglClNdBinDilate(__global VGL_PACK_CL_SHADER_TYPE* img_input,
 #else
   int coord = get_global_linear_id();
 #endif
-  VGL_PACK_OUTPUT_DIRECT_MASK
+
   int ires;
   int idim;
   ires = coord;
@@ -45,7 +45,7 @@ __kernel void vglClNdBinDilate(__global VGL_PACK_CL_SHADER_TYPE* img_input,
     VGL_PACK_CL_SHADER_TYPE pmax = 0;
     for(int i = 0; i < window->size && pmax == 0; i++)
     {
-      int j_bit;
+      VGL_PACK_CL_SHADER_TYPE j_bit;
       int j_byte;
       int conv_coord;
       if (!(window->data[i] == 0))
@@ -78,17 +78,16 @@ __kernel void vglClNdBinDilate(__global VGL_PACK_CL_SHADER_TYPE* img_input,
             conv_coord += img_shape->offset[d] * win_coord[d];
 	  }
         }
-        VGL_PACK_CL_SHADER_TYPE p = img_input[conv_coord] & outputDirectMask[j_bit];
+        VGL_PACK_CL_SHADER_TYPE p = img_input[conv_coord] & (1l << j_bit);
         VGL_PACK_CL_SHADER_TYPE result_bit;
         if (p)
-          pmax = 1;
-        //else
-        //  result_bit = 0;
-        //pmax = max(pmax, result_bit);
+          result_bit = 1;
+        else
+          result_bit = 0;
+        pmax = max(pmax, result_bit);
       }
     }
-    if (pmax)
-      result += outputDirectMask[VGL_PACK_SIZE_BITS - 1 - bit];
+    result += pmax << (VGL_PACK_CL_SHADER_TYPE) (VGL_PACK_SIZE_BITS - 1 - bit);
   }
   img_output[coord] = result;
 }

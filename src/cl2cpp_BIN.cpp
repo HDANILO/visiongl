@@ -1039,6 +1039,18 @@ void vglCl3dBinToGray(VglImage* img_input, VglImage* img_output)
 
   cl_int _err;
 
+  cl_mem mobj_in_shape = NULL;
+  mobj_in_shape = clCreateBuffer(cl.context, CL_MEM_READ_ONLY, sizeof(VglClShape), NULL, &_err);
+  vglClCheckError( _err, (char*) "clCreateBuffer in_shape" );
+  _err = clEnqueueWriteBuffer(cl.commandQueue, mobj_in_shape, CL_TRUE, 0, sizeof(VglClShape), img_input->vglShape->asVglClShape(), 0, NULL, NULL);
+  vglClCheckError( _err, (char*) "clEnqueueWriteBuffer in_shape" );
+
+  cl_mem mobj_out_shape = NULL;
+  mobj_out_shape = clCreateBuffer(cl.context, CL_MEM_READ_ONLY, sizeof(VglClShape), NULL, &_err);
+  vglClCheckError( _err, (char*) "clCreateBuffer out_shape" );
+  _err = clEnqueueWriteBuffer(cl.commandQueue, mobj_out_shape, CL_TRUE, 0, sizeof(VglClShape), img_output->vglShape->asVglClShape(), 0, NULL, NULL);
+  vglClCheckError( _err, (char*) "clEnqueueWriteBuffer out_shape" );
+
   static cl_program _program = NULL;
   if (_program == NULL)
   {
@@ -1075,6 +1087,12 @@ void vglCl3dBinToGray(VglImage* img_input, VglImage* img_output)
   _err = clSetKernelArg( _kernel, 1, sizeof( cl_mem ), (void*) &img_output->oclPtr );
   vglClCheckError( _err, (char*) "clSetKernelArg 1" );
 
+  _err = clSetKernelArg( _kernel, 2, sizeof( cl_mem ), (void*) &mobj_in_shape );
+  vglClCheckError( _err, (char*) "clSetKernelArg 2" );
+
+  _err = clSetKernelArg( _kernel, 3, sizeof( cl_mem ), (void*) &mobj_out_shape );
+  vglClCheckError( _err, (char*) "clSetKernelArg 3" );
+
   int _ndim = 2;
   if (img_input->ndim > 2){
     _ndim = 3;
@@ -1094,6 +1112,12 @@ void vglCl3dBinToGray(VglImage* img_input, VglImage* img_output)
   clEnqueueNDRangeKernel( cl.commandQueue, _kernel, _ndim, NULL, worksize, 0, 0, 0, 0 );
 
   vglClCheckError( _err, (char*) "clEnqueueNDRangeKernel" );
+
+  _err = clReleaseMemObject( mobj_in_shape );
+  vglClCheckError(_err, (char*) "clReleaseMemObject mobj_in_shape");
+
+  _err = clReleaseMemObject( mobj_out_shape );
+  vglClCheckError(_err, (char*) "clReleaseMemObject mobj_out_shape");
 
   vglSetContext(img_output, VGL_CL_CONTEXT);
 }
@@ -2178,6 +2202,18 @@ void vglClBinToGray(VglImage* img_input, VglImage* img_output)
 
   cl_int _err;
 
+  cl_mem mobj_in_shape = NULL;
+  mobj_in_shape = clCreateBuffer(cl.context, CL_MEM_READ_ONLY, sizeof(VglClShape), NULL, &_err);
+  vglClCheckError( _err, (char*) "clCreateBuffer in_shape" );
+  _err = clEnqueueWriteBuffer(cl.commandQueue, mobj_in_shape, CL_TRUE, 0, sizeof(VglClShape), img_input->vglShape->asVglClShape(), 0, NULL, NULL);
+  vglClCheckError( _err, (char*) "clEnqueueWriteBuffer in_shape" );
+
+  cl_mem mobj_out_shape = NULL;
+  mobj_out_shape = clCreateBuffer(cl.context, CL_MEM_READ_ONLY, sizeof(VglClShape), NULL, &_err);
+  vglClCheckError( _err, (char*) "clCreateBuffer out_shape" );
+  _err = clEnqueueWriteBuffer(cl.commandQueue, mobj_out_shape, CL_TRUE, 0, sizeof(VglClShape), img_output->vglShape->asVglClShape(), 0, NULL, NULL);
+  vglClCheckError( _err, (char*) "clEnqueueWriteBuffer out_shape" );
+
   static cl_program _program = NULL;
   if (_program == NULL)
   {
@@ -2214,6 +2250,12 @@ void vglClBinToGray(VglImage* img_input, VglImage* img_output)
   _err = clSetKernelArg( _kernel, 1, sizeof( cl_mem ), (void*) &img_output->oclPtr );
   vglClCheckError( _err, (char*) "clSetKernelArg 1" );
 
+  _err = clSetKernelArg( _kernel, 2, sizeof( cl_mem ), (void*) &mobj_in_shape );
+  vglClCheckError( _err, (char*) "clSetKernelArg 2" );
+
+  _err = clSetKernelArg( _kernel, 3, sizeof( cl_mem ), (void*) &mobj_out_shape );
+  vglClCheckError( _err, (char*) "clSetKernelArg 3" );
+
   int _ndim = 2;
   if (img_input->ndim > 2){
     _ndim = 3;
@@ -2233,6 +2275,12 @@ void vglClBinToGray(VglImage* img_input, VglImage* img_output)
   clEnqueueNDRangeKernel( cl.commandQueue, _kernel, _ndim, NULL, worksize, 0, 0, 0, 0 );
 
   vglClCheckError( _err, (char*) "clEnqueueNDRangeKernel" );
+
+  _err = clReleaseMemObject( mobj_in_shape );
+  vglClCheckError(_err, (char*) "clReleaseMemObject mobj_in_shape");
+
+  _err = clReleaseMemObject( mobj_out_shape );
+  vglClCheckError(_err, (char*) "clReleaseMemObject mobj_out_shape");
 
   vglSetContext(img_output, VGL_CL_CONTEXT);
 }
