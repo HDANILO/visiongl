@@ -78,14 +78,17 @@ class VglImage{
     return this->depth & 255;
   }
 
+  /** widthStep in bytes
+
+   */
   int getWidthStep()
   {
     int widthStep;
-    if (this->ipl)
+    /*if (this->ipl) // TODO: fix this
     {
       widthStep = this->ipl->widthStep;
     }
-    else
+    else*/
     {
       int bps = this->getBitsPerSample();
       if (bps == 1)
@@ -105,6 +108,14 @@ class VglImage{
     return widthStep;
   }
 
+  /** widthStep in words
+
+   */
+  int getWidthStepWords()
+  {
+    return (this->getWidthStep() - 1) / VGL_PACK_SIZE_BYTES + 1;
+  }
+ 
   /** Total number of rows
 
       Get total number of rows. Notice that, in images with more than 2D, may be 
@@ -115,9 +126,28 @@ class VglImage{
     return this->vglShape->getHeightIn() * this->vglShape->getNFrames();
   }
 
+  /** Get row size in bytes
+
+      This is the same as widthStep and can be eliminated.
+  */
+  size_t getRowSizeInBytes()
+  {
+      int bps = this->getBitsPerSample();
+      if (bps == 1)
+      {
+        return this->getWidthStep();
+      }
+      else if (bps < 8)
+      {
+        fprintf(stderr, "%s:%s: Error: bits per pixel = %d < 8 and != 1. Image depth may be wrong.\n", __FILE__, __FUNCTION__, bps);
+        exit(1);
+      }
+      return this->getWidthStep();
+  }
+
   size_t getTotalSizeInBytes()
   {
-    return this->getTotalRows() * this->getWidthStep();
+    return this->getTotalRows() * this->getRowSizeInBytes();
   }
 
   char* getImageData()
@@ -229,6 +259,7 @@ VglImage* vglCreateImage(CvSize size, int depth = IPL_DEPTH_8U, int nChannels = 
 VglImage* vglCreate3dImage(CvSize size, int depth, int nChannels, int nlength, int has_mipmap = 0);
 VglImage* vglCreateNdImage(int ndim, int* shape, int depth, int has_mipmap = 0);
 void vglSaveImage(char* filename, VglImage* image);
+void vglSaveIplImage(char* filename, IplImage* image, int* params = 0);
 void vglSave3dImage(char* filename, VglImage* image, int lStart, int lEnd = -1);
 void vglSaveNdImage(char* filename, VglImage* image, int lStart, int lEnd = -1);
 VglImage* vglCloneImage(IplImage* img_in, int ndim = 2, int has_mipmap = 0);

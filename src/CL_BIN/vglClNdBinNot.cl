@@ -2,8 +2,10 @@
 
   */
 
-__kernel void vglClNdBinNot(__global char* img_input,
-                            __global char* img_output)
+#include "vglConst.h"
+
+__kernel void vglClNdBinNot(__global VGL_PACK_CL_SHADER_TYPE* img_input,
+                            __global VGL_PACK_CL_SHADER_TYPE* img_output)
 {
 #if __OPENCL_VERSION__ < 200
   int coord = (  (get_global_id(2) - get_global_offset(2)) * get_global_size(1) * get_global_size(0)) +
@@ -13,6 +15,6 @@ __kernel void vglClNdBinNot(__global char* img_input,
   int coord = get_global_linear_id();
 #endif
 
-  unsigned char p = img_input[coord];
-  img_output[coord] = 0xff & ~p;
+  VGL_PACK_CL_SHADER_TYPE p = img_input[coord];
+  img_output[coord] = VGL_PACK_MAX_UINT & ~p;
 }

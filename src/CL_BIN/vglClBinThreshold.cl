@@ -3,6 +3,9 @@
     Threshold of grayscale image img_input. Result is binary, stored in img_output. Parameter
     thresh is float between 0.0 and 1.0.
   */
+
+#include "vglConst.h"
+
 __kernel void vglClBinThreshold(__read_only image2d_t img_input,
 			  __write_only image2d_t img_output,
                           float thresh)
@@ -14,9 +17,10 @@ __kernel void vglClBinThreshold(__read_only image2d_t img_input,
 
 
     uint4 result = 0;
-    for (int bit = 0; bit < 8; bit++)
+    for (int bit = 0; bit < VGL_PACK_SIZE_BITS; bit++)
     {
-      float4 p = read_imagef(img_input, smp, (int2)(8*coords.x + 7 - bit, coords.y));
+      float4 p = read_imagef(  img_input, smp, (int2)( VGL_PACK_SIZE_BITS * coords.x + bit, 
+                                                       coords.y )  );
       uint4 result_bit;
       if (p.x >= thresh)
         result_bit.x = 1;

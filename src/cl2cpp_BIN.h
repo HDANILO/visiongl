@@ -69,6 +69,11 @@ void vglCl3dBinRoi(VglImage* img_output, int x0, int y0, int z0, int xf, int yf,
   */
 void vglCl3dBinSub(VglImage* img_input1, VglImage* img_input2, VglImage* img_output);
 
+/** Negation of binary image img_input. Result is stored in img_output.
+
+  */
+void vglCl3dBinSwap(VglImage* img_input, VglImage* img_output);
+
 /** Threshold of grayscale image with binary result.
 
     Threshold of grayscale image img_input. Result is binary, stored in img_output. Parameter
@@ -144,6 +149,11 @@ void vglClBinRoi(VglImage* img_output, int x0, int y0, int xf, int yf);
   */
 void vglClBinSub(VglImage* img_input1, VglImage* img_input2, VglImage* img_output);
 
+/** Negation of binary image img_input. Result is stored in img_output.
+
+  */
+void vglClBinSwap(VglImage* img_input, VglImage* img_output);
+
 /** Threshold of grayscale image with binary result.
 
     Threshold of grayscale image img_input. Result is binary, stored in img_output. Parameter
@@ -156,6 +166,11 @@ void vglClBinThreshold(VglImage* img_input, VglImage* img_output, float thresh);
     Convert binary image to grayscale.
   */
 void vglClBinToGray(VglImage* img_input, VglImage* img_output);
+
+/** Copy N-dimensional image word by word.
+
+  */
+void vglClNdBinCopy(VglImage* img_input, VglImage* img_output);
 
 /** N-dimensional dilation
 
@@ -216,6 +231,11 @@ void vglClNdBinRoi(VglImage* img_output, int* p0, int* pf);
     saves in img_output.
   */
 void vglClNdBinSub(VglImage* img_input1, VglImage* img_input2, VglImage* img_output);
+
+/** Negation of binary image img_input. Result is stored in img_output.
+
+  */
+void vglClNdBinSwap(VglImage* img_input, VglImage* img_output);
 
 /** Threshold of img_input by parameter. if the pixel is below thresh,
     the output is 0, else, the output is 1. Result is stored in img_output.

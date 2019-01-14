@@ -1,0 +1,3 @@
+﻿  benchmark_cl3dbin.cpp
+c:\users\helto\source\repos\visiongl\src\demo\benchmark_cl3dbin.cpp(102): warning C4305: 'argument': truncation from 'double' to 'float'
+  demo_clbin.vcxproj -> C:\Users\Helto\source\repos\visiongl\visiongl\Debug\demo_clbin.exe

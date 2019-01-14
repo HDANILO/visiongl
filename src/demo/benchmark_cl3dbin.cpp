@@ -75,14 +75,20 @@ int main(int argc, char* argv[])
     VglImage* vglThresh = vglCreateImage(shape, IPL_DEPTH_1U, ndim);
     VglImage* vglBin    = vglCreateImage(shape, IPL_DEPTH_1U, ndim);
     VglImage* vglBin2   = vglCreateImage(shape, IPL_DEPTH_1U, ndim);
+    VglImage* vglSwap   = vglCreateImage(shape, IPL_DEPTH_1U, ndim);
     VglImage* vglRoi    = vglCreateImage(shape, IPL_DEPTH_1U, ndim);
     VglImage* vglDil    = vglCreateImage(shape, IPL_DEPTH_1U, ndim);
     int p;
 
+    vglPrintImageInfo(vglGray, (char*)"vglGray");
+    vglGray->vglShape->print((char*)"vglGray");
+    vglPrintImageInfo(vglThresh, (char*)"vglThresh");
+    vglThresh->vglShape->print((char*)"vglThresh");
+
     printf("CREATED COPY\n");
     //First call to Threshold
     TimerStart();
-    vglCl3dBinThreshold(vglIn, vglThresh, 0.2);
+    vglCl3dBinThreshold(vglIn, vglThresh, 0.5);
     vglClFlush();
     printf("Fisrt call to                  Threshold:           %s\n", getTimeElapsedInSeconds());
     //Total time spent on n operations Threshold
@@ -91,14 +97,36 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinThreshold(vglIn, vglThresh, 0.2);
+        vglCl3dBinThreshold(vglIn, vglThresh, 0.282);
     }
     vglClFlush();
     printf("Time spent on %8d         Threshold:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglThresh, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglThresh, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_thresh_%03d.pbm");
-    vglSave3dImage(outFilename, vglThresh, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
+
+    //First call to Swap
+    TimerStart();
+    vglCl3dBinSwap(vglThresh, vglSwap);
+    vglClFlush();
+    printf("First call to                       Swap:           %s\n", getTimeElapsedInSeconds());
+    //Total time spent on n operations Threshold
+    p = 0;
+    TimerStart();
+    while (p < nSteps)
+    {
+        p++;
+        vglCl3dBinSwap(vglThresh, vglSwap);
+    }
+    vglClFlush();
+    printf("Time spent on %8d              Swap:           %s\n", nSteps, getTimeElapsedInSeconds());
+
+    vglCl3dBinSwap(vglSwap, vglBin);
+    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_swap_%03d.pbm");
+    vglSave3dImage(outFilename, vglBin, 0);
 
     //First call to BinToGray
     TimerStart();
@@ -136,9 +164,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d               Not:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin,vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_not_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     float seCube[27]  = { 1, 1, 1, 1, 1, 1, 1, 1, 1,
                           1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -151,9 +180,13 @@ int main(int argc, char* argv[])
                           0, 0, 0, 0, 1, 0, 0, 0, 0, };
     float seSep[3]    = { 1, 1, 1 };
 
+
+    ////////// Dilation
+
+
     //First call to Dilate
     TimerStart();
-    vglCl3dBinDilate(vglThresh, vglBin, seCube, 3, 3, 3);
+    vglCl3dBinDilate(vglThresh, vglDil, seCube, 3, 3, 3);
     vglClFlush();
     printf("First call to           Dilation 3D cube:           %s\n", getTimeElapsedInSeconds());
     //Total time spent on n operations Dilate cube
@@ -167,9 +200,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d  Dilation 3D cube:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglDil, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglDil, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_dilate_std_cube_%03d.pbm");
-    vglSave3dImage(outFilename, vglDil, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Dilate sep.
     p = 0;
@@ -177,16 +211,17 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinDilate(vglThresh, vglBin, seSep, 3, 1, 1);
-        vglCl3dBinDilate(vglBin, vglBin2, seSep, 1, 3, 1);
-        vglCl3dBinDilate(vglBin2, vglBin, seSep, 1, 1, 3);
+        vglCl3dBinDilate(vglThresh, vglBin,  seSep, 3, 1, 1);
+        vglCl3dBinDilate(vglBin,    vglBin2, seSep, 1, 3, 1);
+        vglCl3dBinDilate(vglBin2,   vglBin,  seSep, 1, 1, 3);
     }
     vglClFlush();
     printf("Time spent on %8d  Dilation 3D sep.:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_dilate_std_sep_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Dilate cross
     p = 0;
@@ -199,9 +234,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d Dilation 3D cross:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
-    sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_dilate_std_cube_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
+    sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_dilate_std_cross_%03d.pbm");
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Dilate angle
     p = 0;
@@ -214,16 +250,17 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d Dilation 3D angle:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_dilate_std_angle_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //First call to Dilate pack
     TimerStart();
     vglCl3dBinDilatePack(vglThresh, vglBin, seCube, 3, 3, 3);
     vglClFlush();
     printf("First call to           Dila pac 3D cube:           %s\n", getTimeElapsedInSeconds());
-    //Total time spent on n operations Dilate pack cube
+    //Total time spent on n operations Dilate pack angle
     p = 0;
     TimerStart();
     while (p < nSteps)
@@ -234,9 +271,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d  Dila pac 3D cube:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_dilate_pack_cube_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Dilate pack sep.
     p = 0;
@@ -244,16 +282,17 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinDilatePack(vglThresh, vglBin, seSep, 3, 1, 1);
-        vglCl3dBinDilatePack(vglBin, vglBin2, seSep, 1, 3, 1);
-        vglCl3dBinDilatePack(vglBin2, vglBin, seSep, 1, 1, 3);
+        vglCl3dBinDilatePack(vglThresh, vglBin,  seSep, 3, 1, 1);
+        vglCl3dBinDilatePack(vglBin,    vglBin2, seSep, 1, 3, 1);
+        vglCl3dBinDilatePack(vglBin2,   vglBin,  seSep, 1, 1, 3);
     }
     vglClFlush();
     printf("Time spent on %8d  Dila pac 3D sep.:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_dilate_pack_sep_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Dilate pack cross
     p = 0;
@@ -266,9 +305,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d Dila pac 3D cross:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_dilate_pack_cross_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Dilate pack angle
     p = 0;
@@ -281,13 +321,18 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d Dila pac 3D angle:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_dilate_pack_angle_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
+
+
+    ////////// Erosion
+
 
     //First call to Erode
     TimerStart();
-    vglCl3dBinErode(vglThresh, vglBin, seCube, 3, 3, 3);
+    vglCl3dBinErode(vglDil, vglBin, seCube, 3, 3, 3);
     vglClFlush();
     printf("Fisrt call to                      Erode:           %s\n", getTimeElapsedInSeconds());
     //Total time spent on n operations Erode cube
@@ -296,14 +341,15 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinErode(vglDil,    vglBin, seCube, 3, 3, 3);
+        vglCl3dBinErode(vglDil, vglBin, seCube, 3, 3, 3);
     }
     vglClFlush();
     printf("Time spent on %8d   Erosion 3D cube:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_erode_std_cube_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Erode sep.
     p = 0;
@@ -311,16 +357,17 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinErode(vglDil,    vglBin, seSep, 3, 1, 1);
-        vglCl3dBinErode(vglBin, vglBin2, seSep, 1, 3, 1);
-        vglCl3dBinErode(vglBin2, vglBin, seSep, 1, 1, 3);
+        vglCl3dBinErode(vglDil,  vglBin,  seSep, 3, 1, 1);
+        vglCl3dBinErode(vglBin,  vglBin2, seSep, 1, 3, 1);
+        vglCl3dBinErode(vglBin2, vglBin,  seSep, 1, 1, 3);
     }
     vglClFlush();
     printf("Time spent on %8d   Erosion 3D sep.:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_erode_std_sep_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Erode cross
     p = 0;
@@ -328,14 +375,15 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinErode(vglDil,    vglBin, seCross, 3, 3, 3);
+        vglCl3dBinErode(vglDil, vglBin, seCross, 3, 3, 3);
     }
     vglClFlush();
     printf("Time spent on %8d  Erosion 3D cross:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_erode_std_cross_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Erode angle
     p = 0;
@@ -343,18 +391,19 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinErode(vglDil,    vglBin, seAngle, 3, 3, 3);
+        vglCl3dBinErode(vglDil, vglBin, seAngle, 3, 3, 3);
     }
     vglClFlush();
     printf("Time spent on %8d  Erosion 3D angle:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_erode_std_angle_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //First call to Erode pack
     TimerStart();
-    vglCl3dBinErodePack(vglThresh, vglBin, seCube, 3, 3, 3);
+    vglCl3dBinErodePack(vglDil, vglBin, seCube, 3, 3, 3);
     vglClFlush();
     printf("Fisrt call to                    Ero pac:           %s\n", getTimeElapsedInSeconds());
     //Total time spent on n operations Erode pack cube
@@ -363,14 +412,15 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinErodePack(vglDil,    vglBin, seCube, 3, 3, 3);
+        vglCl3dBinErodePack(vglDil, vglBin, seCube, 3, 3, 3);
     }
     vglClFlush();
     printf("Time spent on %8d   Ero pac 3D cube:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_erode_pack_cube_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Erode pack sep.
     p = 0;
@@ -378,16 +428,17 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinErodePack(vglDil,    vglBin, seSep, 3, 1, 1);
-        vglCl3dBinErodePack(vglBin, vglBin2, seSep, 1, 3, 1);
-        vglCl3dBinErodePack(vglBin2, vglBin, seSep, 1, 1, 3);
+        vglCl3dBinErode(vglDil,  vglBin,  seSep, 3, 1, 1);
+        vglCl3dBinErode(vglBin,  vglBin2, seSep, 1, 3, 1);
+        vglCl3dBinErode(vglBin2, vglBin,  seSep, 1, 1, 3);
     }
     vglClFlush();
     printf("Time spent on %8d   Ero pac 3D sep.:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_erode_pack_sep_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Erode pack cross
     p = 0;
@@ -395,14 +446,15 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinErodePack(vglDil,    vglBin, seCross, 3, 3, 3);
+        vglCl3dBinErodePack(vglDil, vglBin, seCross, 3, 3, 3);
     }
     vglClFlush();
     printf("Time spent on %8d  Ero pac 3D cross:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_erode_pack_cross_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //Total time spent on n operations Erode pack angle
     p = 0;
@@ -410,18 +462,23 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinErodePack(vglDil,    vglBin, seAngle, 3, 3, 3);
+        vglCl3dBinErodePack(vglDil, vglBin, seAngle, 3, 3, 3);
     }
     vglClFlush();
     printf("Time spent on %8d  Ero pac 3D angle:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_erode_pack_angle_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
+
+
+    ////////// Pixelwise
+
 
     //First call to Roi
     TimerStart();
-    vglCl3dBinRoi(vglRoi, 4, 4, 4, 300, 300, 10);
+    vglCl3dBinRoi(vglRoi, 4, 4, 0, 300, 300, 10);
     vglClFlush();
     printf("First call to                        Roi:           %s\n", getTimeElapsedInSeconds());
     //Total time spent on n operations Roi
@@ -430,14 +487,15 @@ int main(int argc, char* argv[])
     while (p < nSteps)
     {
         p++;
-        vglCl3dBinRoi(vglRoi, 4, 4, 4, 300, 300, 10);
+        vglCl3dBinRoi(vglRoi, 4, 4, 0, 300, 300, 10);
     }
     vglClFlush();
     printf("Time spent on %8d               Roi:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglRoi, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglRoi, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_roi_%03d.pbm");
-    vglSave3dImage(outFilename, vglRoi, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //First call to Max
     TimerStart();
@@ -455,9 +513,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d               Max:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_max_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //First call to Min
     TimerStart();
@@ -475,9 +534,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d               Min:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_min_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //First call to Sub
     TimerStart();
@@ -495,9 +555,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d               Sub:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_sub_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //First call to Copy GPU->GPU
     TimerStart();
@@ -515,9 +576,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d     Copy GPU->GPU:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglBin, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglBin, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_copy_%03d.pbm");
-    vglSave3dImage(outFilename, vglBin, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //First call to Copy CPU->GPU
     vglCheckContext(vglThresh, VGL_RAM_CONTEXT);
@@ -538,9 +600,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d     Copy CPU->GPU:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglThresh, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglThresh, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_upload_%03d.pbm");
-    vglSave3dImage(outFilename, vglThresh, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //First call to Copy GPU->CPU
     vglCheckContext(vglThresh, VGL_CL_CONTEXT);
@@ -561,9 +624,10 @@ int main(int argc, char* argv[])
     vglClFlush();
     printf("Time spent on %8d     Copy GPU->CPU:           %s\n", nSteps, getTimeElapsedInSeconds());
 
-    vglCheckContext(vglThresh, VGL_RAM_CONTEXT);
+    vglCl3dBinSwap(vglThresh, vglSwap);
+    vglCheckContext(vglSwap, VGL_RAM_CONTEXT);
     sprintf(outFilename, "%s%s", outPath, "/out_cl3dbin_download_%03d.pbm");
-    vglSave3dImage(outFilename, vglThresh, 0);
+    vglSave3dImage(outFilename, vglSwap, 0);
 
     //flush
     vglClFlush();

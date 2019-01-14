@@ -4,6 +4,7 @@
 #include "vglClImage.h"
 #include "vglContext.h"
 #include "cl2cpp_shaders.h"
+#include "vglConst.h"
 
 
 //ifstream
@@ -298,9 +299,9 @@ void vglClInit()
 {
     cl_int err;
     cl_uint num_platforms, num_devices;
-    cl_device_type device_type = CL_DEVICE_TYPE_ALL;
+    cl_device_type device_type = CL_DEVICE_TYPE_CPU;
     cl_uint id = 0;
-    cl_uint plat = 0;
+    cl_uint plat;
     err = clGetPlatformIDs(0, NULL, &num_platforms);
     vglClCheckError(err, (char*) "clGetPlatformIDs get number of platforms");
     cl.platformId = (cl_platform_id*)malloc(sizeof(cl_platform_id)*num_platforms);
@@ -312,7 +313,15 @@ void vglClInit()
     else if (num_platforms >= 1)
         printf("found %d platform(s) for opencl\n\n", num_platforms);
 
-    err = clGetDeviceIDs(cl.platformId[plat], device_type, 0, NULL, &num_devices);
+    for (plat = 0; plat < num_platforms; plat++)
+    {
+      err = clGetDeviceIDs(cl.platformId[plat], device_type, 0, NULL, &num_devices);
+      printf("platform[%d]: found %d device(s) for opencl\n\n", plat, num_devices);
+      if (err == CL_SUCCESS)
+      {
+	break;
+      }
+    }
     vglClCheckError(err, (char*) "clGetDeviceIDs get number of devices");
 
     if (num_devices == 0)
@@ -357,6 +366,10 @@ void vglClInit()
 #ifdef __linux__
     printf("glXGetCurrentContext() = %p\n", glXGetCurrentContext() );
     printf("glXGetCurrentDisplay() = %p\n", glXGetCurrentDisplay() );
+    if (not glXGetCurrentDisplay())
+    {
+      vglClInteropSetFalse();
+    }
     cl_context_properties properties1[] = {
           CL_GL_CONTEXT_KHR, (cl_context_properties) glXGetCurrentContext(),
           CL_GLX_DISPLAY_KHR, (cl_context_properties) glXGetCurrentDisplay(),
@@ -385,6 +398,20 @@ void vglClInit()
 
     cl.commandQueue = clCreateCommandQueue( cl.context, *cl.deviceId, 0, &err );
     vglClCheckError( err, (char*) "clCreateCommandQueue" );
+
+    printf("%s: %s: VGL_PACK_SIZE_BITS:  %d\n", __FILE__, __FUNCTION__, VGL_PACK_SIZE_BITS);
+    printf("%s: %s: VGL_PACK_SIZE_BYTES: %d\n", __FILE__, __FUNCTION__, VGL_PACK_SIZE_BYTES);
+    
+    err = clGetDeviceInfo(cl.deviceId[id], CL_DEVICE_NAME, msgLen, msg, NULL);
+    printf("%s: %s: CL_DEVICE_NAME: %s\n", __FILE__, __FUNCTION__, msg);
+    err = clGetDeviceInfo(cl.deviceId[id], CL_DEVICE_VENDOR, msgLen, msg, NULL);
+    printf("%s: %s: CL_DEVICE_VENDOR: %s\n", __FILE__, __FUNCTION__, msg);
+    err = clGetDeviceInfo(cl.deviceId[id], CL_DEVICE_PROFILE, msgLen, msg, NULL);
+    printf("%s: %s: CL_DEVICE_PROFILE: %s\n", __FILE__, __FUNCTION__, msg);
+    err = clGetDeviceInfo(cl.deviceId[id], CL_DEVICE_VERSION, msgLen, msg, NULL);
+    printf("%s: %s: CL_DEVICE_VERSION: %s\n", __FILE__, __FUNCTION__, msg);
+    err = clGetDeviceInfo(cl.deviceId[id], CL_DRIVER_VERSION, msgLen, msg, NULL);
+    printf("%s: %s: CL_DRIVER_VERSION: %s\n", __FILE__, __FUNCTION__, msg);
 
     err = clGetDeviceInfo(cl.deviceId[id], CL_DEVICE_EXTENSIONS, msgLen, msg, NULL);
     printf("%s: %s: CL_DEVICE_EXTENSIONS:\n%s\n", __FILE__, __FUNCTION__, msg);
@@ -494,7 +521,7 @@ void vglClUpload(VglImage* img)
 
             if (img->depth == IPL_DEPTH_1U)
 	    {
-                format.image_channel_data_type = CL_UNSIGNED_INT8;
+                format.image_channel_data_type = VGL_PACK_CL_CONST_TYPE;
 	    }
             else if (img->depth == IPL_DEPTH_8U)
 	    {
@@ -514,20 +541,22 @@ void vglClUpload(VglImage* img)
                 format.image_channel_data_type = CL_UNORM_INT8;
 	    }
 
+
             // TODO: Generalize to higher dimensions
-            if ( (img->ndim == 2) && !(img->clForceAsBuf) && (img->depth == IPL_DEPTH_1U) )
+            int w = img->getWidth();
+            if (img->depth == IPL_DEPTH_1U)
+	    {
+              w = img->getWidthStepWords();
+	    }
+
+            if ( (img->ndim == 2) && !(img->clForceAsBuf) )
             {
-                img->oclPtr = clCreateImage2D(cl.context, CL_MEM_READ_WRITE, &format, img->getWidthStep(), img->getHeight(), 0, NULL, &err);
-                vglClCheckError( err, (char*) "clCreateImage2D" );
-            }
-            else if ( (img->ndim == 2) && !(img->clForceAsBuf) )
-            {
-                img->oclPtr = clCreateImage2D(cl.context, CL_MEM_READ_WRITE, &format, img->getWidth(), img->getHeight(), 0, NULL, &err);
+                img->oclPtr = clCreateImage2D(cl.context, CL_MEM_READ_WRITE, &format, w, img->getHeight(), 0, NULL, &err);
                 vglClCheckError( err, (char*) "clCreateImage2D" );
             }
             else if ( (img->ndim == 3) && !(img->clForceAsBuf) )
             {
-                img->oclPtr = clCreateImage3D(cl.context, CL_MEM_READ_WRITE, &format, img->getWidth(), img->getHeight(), img->getLength(), 0, 0, NULL, &err);
+                img->oclPtr = clCreateImage3D(cl.context, CL_MEM_READ_WRITE, &format, w, img->getHeight(), img->getLength(), 0, 0, NULL, &err);
                 vglClCheckError( err, (char*) "clCreateImage3D" );
             }
             else
@@ -587,7 +616,13 @@ void vglClUpload(VglImage* img)
 
             if (  ( (img->ndim == 2) || (img->ndim == 3) )  &&  !(img->clForceAsBuf)  && (img->depth == IPL_DEPTH_1U) )
             {
-                size_t Size3d[3] = {img->getWidthStep(), img->getHeight(), nFrames};
+                if (VGL_PACK_SIZE_BITS > 32)
+                {
+                  fprintf(stderr, "%s: %s: Error: VGL_PACK_SIZE_BITS = %d > 32, incompatible with OpenCL IMG. May spoil resulting images. Use vglClForceAsBuf(vglImage*) or recompile setting #define VGL_PACK_32 in vglConst.h.\n", __FILE__, __FUNCTION__, VGL_PACK_SIZE_BITS);
+                  exit(1);
+                }
+
+                size_t Size3d[3] = {img->getWidthStepWords(), img->getHeight(), nFrames};
                 err = clEnqueueWriteImage( cl.commandQueue, img->oclPtr, CL_TRUE, Origin, Size3d, 0, 0, (char*)imageData, 0, NULL, NULL );
                 vglClCheckError( err, (char*) "clEnqueueWriteImage" );
                 clFinish(cl.commandQueue);
@@ -751,7 +786,7 @@ void vglClDownload(VglImage* img)
 
         if (  ( (img->ndim == 2) || (img->ndim == 3) )  &&  !(img->clForceAsBuf)  && (img->depth == IPL_DEPTH_1U) )
 	{
-            size_t Size3d[3] = {img->getWidthStep(), img->getHeight(), nFrames};
+            size_t Size3d[3] = {img->getWidthStepWords(), img->getHeight(), nFrames};
             cl_int err_cl = clEnqueueReadImage( cl.commandQueue, img->oclPtr, CL_TRUE, Origin, Size3d, 0, 0, imageData, 0, NULL, NULL );
             vglClCheckError( err_cl, (char*) "clEnqueueReadImage" );
 	}
